@@ -1,0 +1,71 @@
+@mixin clear-float() {
+  float: none;
+  clear: both;
+}
+
+.clear-float {
+  @include clear-float();
+}
+
+@mixin hidden() {
+  display: none;
+}
+
+.hidden {
+  @include hidden();
+}
+
+.hr {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  height: 1px;
+  background: #eee;
+}
+
+// Blinking cursor for typed.js
+.typed-cursor {
+  opacity: 1;
+  margin: 0 -6px 0 -4px;
+  width: 5px;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+  will-change: opacity;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

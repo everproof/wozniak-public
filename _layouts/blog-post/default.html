@@ -1,0 +1,46 @@
+---
+layout: layout
+---
+
+<section class="blog-post">
+  <div>
+    <h1 class="title">{{ page.title }}</h1>
+    <div class="author">
+      <img class="avatar" src="/img/blog/avatars/{{ page.author }}.jpg">
+      <span class="details">
+        <div class="name">{{ page.author }}</div>
+        <div class="date">{{ page.date | date_to_long_string }}</div>
+      </span>
+    </div>
+
+    <div class="hr"></div>
+
+    {% if page.banner-image %}
+      <div class="banner-image">
+        <img src="{{ page.banner-image }}"/>
+      </div>
+    {% endif %}
+
+    <div class="blog-content">
+      {{ content }}
+    </div>
+
+    <div class="any-2-any-wrapper">
+      <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+        <a class="a2a_button_facebook"></a>
+        <a class="a2a_button_twitter"></a>
+        <a class="a2a_button_google_plus"></a>
+        <a class="a2a_dd"
+           href="https://www.addtoany.com/share?linkurl={{ site.data.global.url }}{{ page.url | cgi_escape }}&amp;linkname={{ page.title | cgi_escape }}"></a>
+      </div>
+      <script>
+          var a2a_config = a2a_config || {};
+          a2a_config.linkname = "{{ page.title }}";
+          a2a_config.linkurl = "{{ site.data.global.url }}{{ page.url }}";
+      </script>
+      <script async src="https://static.addtoany.com/menu/page.js"></script>
+    </div>
+  </div>
+</section>
+
+{% include section/ready-to-go.html %}

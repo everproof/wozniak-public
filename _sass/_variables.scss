@@ -1,0 +1,42 @@
+// Breakpoints
+
+$screen-x-large: 1200px;
+$screen-x-large-min: $screen-x-large - 1px;
+
+$screen-large: 992px;
+$screen-large-min: $screen-large - 1px;
+
+$screen-medium: 780px;
+$screen-medium-min: $screen-medium - 1px;
+
+$screen-small: 611px;
+$screen-small-min: $screen-small - 1px;
+
+$screen-x-small: 401px;
+$screen-x-small-min: $screen-x-small - 1px;
+
+$nav-bar-height: 63px;
+
+//Colour
+$green: #59cd90;
+$blue: #53ACE7;
+$yellow: #fbc053;
+$red: #f99d81;
+$purple: #cf89fb;
+
+$primary-color: $blue;
+$secondary-color: $green;
+
+$subheading-color: #999999;
+$body-text-color: #777777;
+
+$gradient-start: #59d7e4;
+$gradient-end: #69b1f9;
+
+$dark-yellow: darken($yellow, 10%);
+$dark-green: darken($green, 10%);
+
+$color-list: $green $blue $yellow $red $purple;
+
+// For Bootstrap modals to work we need to set their z-index
+$zindex-modal: 1050 !default;

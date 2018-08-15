@@ -1,0 +1,9 @@
+Hi {{name}},
+
+We've received your message and someone will be in touch with you shortly.
+
+Meanwhile, why don't you check out our
+blog! (https://Everproof.com/blog/) We post some cool content.
+
+Thanks,
+The Everproof Team

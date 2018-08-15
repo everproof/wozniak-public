@@ -1,0 +1,32 @@
+- title:
+    main: "Verify Qualifications"
+    short: "Verify"
+    mobile: "Verify Qualifications in Seconds"
+  content:
+    title: "Verify WWCCs, VIT Teacher Registrations and more"
+    text: "Free and instant verification of qualifications such as Working With Children Checks"
+  image: "/img/carousel/best-features/verify-quals.png"
+
+- title:
+    main: "Staff & Volunteer Access"
+    short: "Access"
+  content:
+    title: "Accounts for Each Person"
+    text: "Each employee or volunteer gets their own Everproof account to proactively manage their qualifications."
+  image: "/img/carousel/best-features/staff-and-volunteer-access.png"
+
+- title:
+    main: "View Compliance"
+    short: "Comply"
+  content:
+    title: "See who is & isn't compliant"
+    text: "View insight into your organisation's current and real-time compliance from a single dashboard."
+  image: "/img/carousel/best-features/view-compliance.png"
+
+- title:
+    main: "Be Notified"
+    short: "Notify"
+  content:
+    title: "Automated Alerts"
+    text: "Instant and automated notifications of expiring and invalid qualifications."
+  image: "img/carousel/best-features/be-notified.png"

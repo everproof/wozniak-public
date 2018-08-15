@@ -1,0 +1,19 @@
+#contact {
+	#contact-form {
+		margin: 0;
+	}
+
+	h2 {
+	  margin-bottom: 40px;
+	}
+
+	#comments {
+		height: 150px;
+	}
+}
+
+@media (max-width: $screen-xs-max) {
+	#submit {
+		margin-bottom: 40px;
+	}
+}

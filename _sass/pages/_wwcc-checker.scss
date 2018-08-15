@@ -1,0 +1,223 @@
+@import "../mixins/utils";
+@import "../variables";
+@import '../bootstrap/grid';
+
+#wwcc-verification {
+  p {
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  form {
+    max-width: 1000px !important;
+  }
+
+  .providers {
+    @include no-list-styles();
+
+    @extend .row;
+
+    margin: 0;
+    padding: 0;
+
+    li {
+      @extend .col-md-2;
+      @extend .col-sm-4;
+      @extend .col-xs-6;
+      box-sizing: border-box;
+      padding: 5px;
+
+      &:first-child {
+        @extend .col-md-offset-1;
+      }
+    }
+
+    label {
+      display: block;
+      border: 1px solid $blue;
+      border-radius: 5px;
+      color: $blue;
+      cursor: pointer;
+      text-align: center;
+      font-weight: normal;
+      margin: 0;
+      padding: 5px;
+
+      &.checked {
+        background: $blue;
+        border-color: darken($blue, 10%);
+        color: #ffffff;
+      }
+    }
+
+    input[type=radio] {
+      display: none;
+
+      &:checked + label {
+        @extend label.checked;
+      }
+
+      &:disabled + label {
+        cursor: not-allowed;
+        background: #ebebe4;
+      }
+
+      &:disabled:checked + label {
+        background: desaturate($blue, 10%);
+      }
+    }
+  }
+
+  .fields-wrapper {
+    margin: 30px 0 40px;
+  }
+
+  .result-types {
+    background: white;
+    padding: 5px 10px;
+    margin-bottom: 30px;
+    float: right;
+
+    span {
+      position: relative;
+      padding-left: 25px;
+      display: inline-block;
+
+      &:before {
+        content: " ";
+        height: 15px;
+        width: 15px;
+        border: 1px solid #808080;
+        background: white;
+        position: absolute;
+        display: block;
+        top: 1px;
+        left: 5px;
+      }
+
+      &.verified {
+        &:before {
+          background: $green;
+        }
+      }
+
+      &.warning {
+        &:before {
+          background: $yellow;
+        }
+      }
+
+      &.invalid {
+        &:before {
+          background: $red;
+        }
+      }
+    }
+  }
+
+  .fields {
+    clear: both;
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    min-width: 600px;
+
+    tr {
+      background: #ffffff;
+
+      &.header {
+        background: $blue;
+
+        th {
+          border: 1px solid $blue;
+          border-bottom: 2px solid darken($blue, 10%);
+          padding: 5px 5px 3px;
+          text-align: center;
+          color: white;
+          font-weight: 400;
+        }
+      }
+
+      &.verified, &.warning, &.invalid {
+        .status {
+          position: relative;
+
+          &:after {
+            content: " ";
+            position: absolute;
+
+            @include set-multiple(top left, 50%);
+            @include set-multiple(width height, 30px);
+            @include set-multiple(margin-top margin-left, -15px);
+          }
+        }
+      }
+
+      &.verified {
+        background: $green;
+
+        .status:after {
+          content: " ";
+          background: url('/img/icons/verification-status/verified.svg') center center no-repeat;
+        }
+      }
+
+      &.warning {
+        background: $yellow;
+
+        .status:after {
+          content: " ";
+          background: url('/img/icons/verification-status/warning.svg') center center no-repeat;
+        }
+      }
+
+      &.invalid {
+        background: $red;
+
+        .status:after {
+          content: " ";
+          background: url('/img/icons/verification-status/invalid.svg') center center no-repeat;
+        }
+      }
+
+      td {
+        border: 1px solid #d4d4d4;
+      }
+
+      input {
+        margin: 0;
+        border: none;
+        background: none;
+        border-radius: 0;
+
+        // Unfortunately there is a bug with both Chrome and Firefox that doesn't
+        // let you style inputs that have been autofilled, there is a proposal for CSS4
+        &:autofull,
+        &:-webkit-autofill,
+        &:-moz-autofill {
+          background: none !important;
+        }
+      }
+    }
+  }
+
+  .time-saved {
+    text-align: center;
+    margin-top: 5px;
+
+    &.hidden {
+      // Hide with opacity rather than display:none so that the layout doesn't 'jump' when
+      // show/hidden
+      opacity: 0;
+      display: block !important;
+    }
+  }
+
+  @media (max-width: 500px) {
+    button[type=submit] {
+      margin: 0 auto;
+    }
+  }
+}

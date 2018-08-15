@@ -1,0 +1,93 @@
+---
+layout: index-banner-layout
+navigation: true
+title: Home
+description: Managing qualifications and compliance can be time consuming and painful, but Everproof has a solution for organisations and individuals. Get started today!
+---
+
+{% include section/client-logos.html clients=site.data.client_logos.page.index %}
+
+<section id="industries">
+  <h2>Key Sectors</h2>
+  <p class="subheading">
+    Businesses in these sectors are using Everproof
+  </p>
+  <div class="boxes">
+    {% assign num_sectors = site.data.industry_boxes | size %}
+    {% for industry in site.data.industry_boxes %}
+      <div class="box-wrapper {% if forloop.index == num_sectors %}last{% endif %}">
+        <a href="{{ industry.link }}">
+          <div class="box {{ industry.class }}">
+            <div class="content">
+              <img class="svg" src="{{ industry.image }}">
+              <p class="title">{{ industry.title }}</p>
+              {{ industry.desc | markdownify }}
+            </div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="features">
+  <h2>Your time is valuable</h2>
+  <p class="subheading">Features that can make your life really, really easy!</p>
+
+  <div id="carousel-selectors">
+    {% for feature in site.data.features %}
+      <a class="selector {% if forloop.index == 1 %}active{% endif %}">
+        <span class="small">{{ feature.title.short }}</span><span class="large">{{ feature.title.main }}</span>
+      </a>
+    {% endfor %}
+  </div>
+
+  <div id="carousel" class="carousel col-xs-center">
+    <ul>
+      {% for feature in site.data.features %}
+      <li class="item">
+        <div class="alt-title">{{ feature.title.mobile | default: feature.title.main }}</div>
+        <div class="row">
+          <div class="image">
+            <img src="{{ feature.image }}" class="img-responsive">
+          </div>
+          <div class="carousel-info">
+            <p class="title">{{ feature.content.title }}</p>
+            <p>{{ feature.content.text }}</p>
+            <p><a class="important" href="/demo">Request A Demo</a></p>
+          </div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div> <!-- End carousel -->
+</section> <!-- End features -->
+
+<section id="success">
+  <h2>Used by businesses just like you</h2>
+  <p class="subheading">Read about how our organisations are using Everproof</p>
+  <div class="client-success-carousel">
+    <ul>
+      {% for client_success in site.data.client_success %}
+        <li class="story-wrapper">
+          <div class="story">
+            <img src="{{ client_success.image }}" />
+            <div class="quote-wrapper">
+              <p>
+                <span class="quote">{{ client_success.quote }}</span>
+              </p>
+              <p><a class="important" href="{{ client_success.read_more_link }}">Read More</a></p>
+
+              <div class="quote-source">
+                <div class="name">{{ client_success.name }}</div>
+                <div class="organisation">{{ client_success.organisation }}</div>
+              </div>
+            </div>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{% include section/ready-to-go.html %}

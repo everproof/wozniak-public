@@ -1,0 +1,23 @@
+---
+layout: layout
+---
+
+{% if page.banner-image %}
+  {% assign class = "" %}
+  {% capture attributes %}
+  style="background-image: url('{{ page.banner-image }}');"
+  {% endcapture %}
+{% else %}
+  {% assign class = "no-image" %}
+{% endif %}
+
+<div id="main-header" class="{{ class }}" {{ attributes }}>
+  <div id="header">
+    <div id="header-title">
+      <h1 class="main-title">{{ page.banner-title }}</h1>
+      <h1 class="subheading">{{ page.banner-description }}</h1>
+      <img src="../img/clients/aon.png"/>
+    </div>
+  </div>
+</div>
+{{ content }}

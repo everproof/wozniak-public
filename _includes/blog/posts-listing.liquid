@@ -1,0 +1,37 @@
+<section id="blog-posts">
+    <div class="posts">
+        {% for post in include.paginator.posts %}
+          <div class="post">
+            <a href="{{ post.url }}">
+              <div class="image-wrapper">
+                <img src="{{ post.list-image }}" class="img-responsive"/>
+              </div>
+            </a>
+            <a href="{{ post.url }}"><h2 class="blog-title">{{ post.title }}</h2></a>
+            <p class="excerpt">
+              {{ post.excerpt | strip_html | truncatewords: 21 | replace: '....', '...'}}
+            </p>
+            <div><a href="{{ post.url }}">Read More</a></div>
+          </div>
+        {% endfor %}
+      </div>
+    
+      <div class="pagination">
+        {% if include.paginator.previous_page %}
+          {% if include.paginator.previous_page != 1 %}
+            {% assign page_number = "page" | append:include.paginator.previous_page | append:"/" %}
+          {% else %}
+            
+          {% endif %}
+          <a href="/{{include.base_url}}/{{page_number}}" class="previous">Previous</a>
+        {% else %}
+          <span class="previous">Previous</span>
+        {% endif %}
+        <span class="page-number ">Page: {{ include.paginator.page }} of {{ include.paginator.total_pages }}</span>
+        {% if include.paginator.next_page %}
+          <a href="/{{include.base_url}}/page{{include.paginator.next_page}}/" class="next">Next</a>
+        {% else %}
+          <span class="next ">Next</span>
+        {% endif %}
+      </div>
+</section>

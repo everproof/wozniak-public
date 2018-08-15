@@ -1,0 +1,23 @@
+<section id="clients" class="text-center">
+  <p class="subheading">Trusted by over 1,000 organizations big and small</p>
+  {% assign clients = include.clients | load_client_info | chunk_array: 6 %}
+  {% for chunk in clients %}
+    <div class="row">
+      {% for client in chunk %}
+        <div class="image-wrapper">
+          {% capture image %}
+          <img src="{{ client.image }}"
+               class="grayscale img-responsive"
+               alt="{{ client.name }}"
+               title="{{ client.name }}">
+          {% endcapture %}
+          {% if client.success_story_url %}
+            <a href="{{ client.success_story_url }}">{{ image }}</a>
+          {% else %}
+            {{ image }}
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+</section>

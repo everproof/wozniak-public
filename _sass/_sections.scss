@@ -1,0 +1,27 @@
+@import "variables";
+
+.section, section {
+  padding: 50px 40px;
+  background: #f9f9f9;
+
+  &:nth-child(odd) {
+    background: #ffffff;
+  }
+
+  > h2 {
+    margin-top: 0;
+    text-align: center;
+  }
+
+  > .subheading {
+    margin-bottom: 50px;
+    font-size: 18px;
+    color: $subheading-color;
+    text-align: center;
+  }
+
+  @media (max-width: 500px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

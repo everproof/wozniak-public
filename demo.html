@@ -1,0 +1,74 @@
+---
+layout: banner-layout
+title: Request a Demo
+banner-title: Request a Demo
+banner-description: We'd love to hear from you.
+---
+
+<section id="contact">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Request a Demo</h2>
+      <form
+        class="contact"
+        id="contact-form"
+        action="/api/contact"
+        method="post"
+        enctype="text/plain">
+        <input type="hidden" name="formName" value="Contact Form">
+        <input
+          id="name"
+          type="text"
+          placeholder="Name"
+          name="contact_name"
+          required />
+        <input
+          id="email"
+          type="text"
+          placeholder="Email"
+          name="contact_email"
+          required />
+        <input
+          id="phone"
+          type="tel"
+          placeholder="Phone"
+          name="contact_phone"
+          required />
+        <input
+          id="organisation"
+          type="text"
+          placeholder="Organisation"
+          name="contact_organisation"
+          required />
+        <textarea id="comments" placeholder="Comments" name="contact_comments"></textarea>
+        <div class="g-recaptcha" data-sitekey="{{site.data.global.recaptcha.contact_form.site_key}}"></div>
+        <p class="message hidden"></p>
+        <button id="submit" class="button inline primary" type="submit">Send</button>
+      </form>
+    </div>
+    <div class="col-md-5 col-md-offset-1">
+      <h2>Contact Us</h2>
+      <ul class="fancy-list">
+        <li class="fancy-list-item">
+          <div class="image less-top"><img src="/img/icons/linericons/phone.svg" /></div>
+          <div class="title">Phone</div>
+          <div class="desc"><a href="tel:+61 3 9088 4184">+61 3 9088 4184</a></div>
+          <div class="clear-float"></div>
+        </li>
+        <li class="fancy-list-item">
+          <div class="image less-top"><img src="/img/icons/linericons/envelope.svg" /></div>
+          <div class="title">Email</div>
+          <div class="desc"><a href="mailto:info@Everproof.com">info@everproof.com</a></div>
+          <div class="clear-float"></div>
+        </li>
+         <li class="fancy-list-item">
+          <div class="image less-top double-line"><img src="/img/icons/linericons/location.svg" /></div>
+          <div class="title">Address</div>
+          <div class="desc">10/28 Down Street<br>Collingwood VIC 3066</div>
+          <div class="clear-float"></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+{% include section/client-logos.html clients=site.data.client_logos.page.index %}

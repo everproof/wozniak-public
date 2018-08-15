@@ -1,0 +1,53 @@
+#terms {
+  // Styles straight from the old terms page
+  ol.roman {
+    list-style: none;
+  }
+
+  ol.roman {
+    counter-reset: roman;
+  }
+
+  ol.roman > li.roman:before {
+    counter-increment: roman;
+    content: counter(roman, upper-latin) ".";
+    padding-right: 5px;
+  }
+
+  ol.roman li.roman ol.roman {
+    counter-reset: inner;
+  }
+
+  ol.roman ol.roman li.roman:before {
+    counter-increment: inner;
+    content: counter(roman, upper-latin) "." counters(inner, '.');
+    padding-right: 5px;
+  }
+
+  ol.decimal {
+    list-style-type: none;
+    counter-reset: item;
+    margin: 0;
+    padding: 0;
+  }
+
+  ol.decimal > li.decimal {
+    display: table;
+    counter-increment: item;
+    margin-bottom: 0.6em;
+  }
+
+  ol.decimal > li.decimal:before {
+    content: counters(item, ".") ". ";
+    display: table-cell;
+    padding-right: 0.6em;
+  }
+
+  li.decimal ol.decimal > li.decimal {
+    margin: 0;
+  }
+
+  li.decimal ol.decimal > li.decimal:before {
+    content: counters(item, ".") " ";
+  }
+}

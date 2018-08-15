@@ -1,0 +1,121 @@
+@import "../bootstrap/variables";
+@import "../bootstrap/mixins";
+@import "../bootstrap/grid";
+
+$features-width-cutoff: 470px;
+
+#carousel-selectors {
+  @include flexbox();
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+
+  @media (max-width: $features-width-cutoff) {
+    display: none;
+  }
+
+  .selector {
+    @include flex(0 1 auto);
+    display: block;
+    box-sizing: border-box;
+    padding: 5px;
+    width: 25%;
+    border-bottom: 3px solid #e9e9e9;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+
+    @for $i from 1 through length($color-list) {
+      $color: nth($color-list, $i);
+
+      &:nth-child(#{$i}) {
+        color: $color;
+
+        &.active {
+          border-color: $color;
+        }
+      }
+    }
+  }
+}
+
+#carousel {
+  .row {
+    margin: 0;
+  }
+
+  .item {
+    list-style: none;
+
+    .title {
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .alt-title {
+      display: none;
+      width: 80%;
+      padding: 5px;
+      border-bottom: 3px solid #e9e9e9;
+      text-transform: uppercase;
+      font-weight: 600;
+
+      @media (max-width: $features-width-cutoff) {
+        display: inline-block;
+      }
+    }
+
+    .row {
+      padding: 45px 0 0 0;
+    }
+
+    .image {
+      text-align: center;
+
+      @extend .col-sm-6;
+      @extend .col-xs-12;
+      @extend .col-xs-offset-0;
+      @extend .col-sm-offset-1;
+
+      img {
+        display: inline-block;
+      }
+    }
+
+    .carousel-info {
+      max-width: 300px;
+      padding-top: 30px;
+
+      @extend .col-sm-4;
+      @extend .col-xs-12;
+
+      @media (max-width: $screen-xs-max) {
+        padding-top: 30px;
+        max-width: 100%;
+
+        > p {
+          max-width: 300px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+  }
+
+  @for $i from 1 through length($color-list) {
+    $color: nth($color-list, $i);
+
+    .item:nth-child(#{$i}) {
+      .title {
+        color: $color;
+      }
+
+      .alt-title {
+        color: $color;
+        border-color: $color;
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+@import "../mixins/utils";
+@import "../mixins/video";
+
+#security-features {
+
+  .introduction {
+    line-height: 150%;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    img {
+      width:40px;
+      margin-right:10px;
+    }
+  }
+  
+  .fancy-list {
+    @extend .row;
+
+    @include set-multiple(margin-left margin-right, auto);
+
+    .fancy-list-item {
+      @extend .col-sm-6;
+      @include set-multiple(margin-top margin-bottom, 20px);
+    }
+
+    margin-bottom: 50px;
+
+    li {
+      div {
+        padding-left: 0px;
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-medium-min) {
+  #security-features {
+    .introduction {
+      font-size: 16px;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+#stand-out-with-employers {
+  h2 {
+    margin-bottom: 25px;
+  }
+
+  .video {
+    max-width: 640px;
+
+    .video-inner {
+      @extend .embed-responsive;
+      @extend .embed-responsive-16by9;
+
+      position: relative;
+      background: url('/img/individual-display-487x400.png') center center no-repeat;
+      background-size: contain;
+
+      .video-play {
+        top: 40%;
+        left: 50%;
+
+        @include video-play-button(70px);
+      }
+
+      iframe {
+        display: none;
+      }
+
+      &.show-video {
+        background: none;
+
+        iframe {
+          display: block;
+        }
+
+        .video-play {
+          display: none;
+        }
+      }
+    }
+  }
+}

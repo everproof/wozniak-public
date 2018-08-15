@@ -1,0 +1,49 @@
+#refer {
+  #logo {
+		margin-bottom: 50px;
+	}
+	#arrow {
+		margin-top: 15px;
+	}
+	.image {
+		margin-top: -10px;
+	}
+	.highlight {
+		color: #53ACE7
+	}
+	.cta {
+		font-size: 30px;
+		line-height: 150%;
+		margin-bottom: 30px;
+	}
+	.sub-cta {
+		font-size: 18px;
+		line-height: 150%;
+		margin-bottom: 40px;
+	}
+	h2 {
+		margin-bottom: 20px;
+	}
+	#submit {
+		margin-top: 30px;
+	}
+	.desc {
+		position: relative;
+		top: -11px;
+	}
+
+	@media (max-width: $screen-xs-max) {
+		.desc {
+			position: relative;
+			top: -22px;
+		}
+	}
+}
+
+#refer-details {
+	.sub-cta {
+		font-size: 18px;
+		line-height: 150%;
+		margin-bottom: 40px;
+	}
+}

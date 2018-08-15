@@ -1,0 +1,23 @@
+.container {
+  padding: 0;
+  max-width: 1580px !important;
+  width: 100% !important;
+}
+
+#navbar > * {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+}
+
+body > .container > * > * {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
+}
+
+footer > .container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
+}

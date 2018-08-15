@@ -1,0 +1,127 @@
+clients:
+  - name: AON
+    url: http://aon.com/
+    image: /img/clients/aon.png
+
+  - name: Australian Childhood Foundation
+    url: http://childhood.org.au/
+    image: /img/clients/acf.jpg
+  
+  - name: ARA Retail Group
+    url: http://retail.org.au/
+    image: /img/clients/ara-retail-institute.png
+  
+  - name: Cricket Australia
+    url: http://www.cricketaustralia.com.au
+    image: /img/clients/cricket-australia.png
+
+  - name: Cricket Victoria
+    url: http://www.cricketvictoria.com.au/
+    image: /img/clients/partner-cricket-victoria.png
+
+  - name: Body Care
+    url: http://www.bodycare.com.au/
+    image: /img/clients/bodycare-workplace-solutions.png
+
+  - name: Trinity Grammar School
+    url: http://www.trinity.vic.edu.au/
+    success_story_url: /blog/2017/02/23/client-success-story-trinity-grammar-school/
+    image: /img/clients/trinity-logo.png
+
+  - name: Gymnastics Victoria
+    url: https://vic.gymnastics.org.au/
+    image: /img/clients/gymnastics-victoria.png
+
+  - name: Squash and Racquetball Victoria
+    url: http://www.squashvic.com.au/
+    image: /img/clients/squash-and-racquetball-vic.png
+
+  - name: South Metro Junior Footbal League
+    url: http://smjfl.com.au/
+    success_story_url: /blog/2016/09/13/client-success-story-south-metro-junior-football-league/
+    image: /img/clients/south-melbourne-jnr-football.png
+
+  - name: Australian Camps Association
+    url: http://www.auscamps.asn.au/
+    image: /img/clients/australian-camps-association.png
+
+  - name: Briars Camps
+    url: http://www.briarscamp.com.au/
+    image: /img/clients/briars-camps.jpeg
+
+  - name: Diamond Creek Netball
+    url: http://diamondcreekfc.com.au/
+    image: /img/clients/diamond-creek-netball.png
+
+  - name: Doxa
+    url: http://doxa.org.au/
+    image: /img/clients/doxa.png
+
+  - name: Eastern Football League
+    url: http://efl.org.au/
+    image: /img/clients/eastern-football-league.png
+
+  - name: Edmund Rice Camps
+    url: http://www.ercvic.com/
+    image: /img/clients/edmund-rice-camps.png
+
+  - name: Licola
+    url: http://www.licola.org.au/
+    image: /img/clients/licola.jpg
+
+  - name: Netball America
+    url: http://netballamerica.com/
+    image: /img/clients/netball-america.png
+
+  - name: Northern Football League
+    url: http://nfl.org.au/
+    image: /img/clients/northern-football-league-australia.png
+
+  - name: Pure Allstars
+    url: http://pureallstars.com.au/
+    success_story_url: blog/2016/10/28/client-success-story-pure-allstars/
+    image: /img/clients/pure-allstars.png
+
+  - name: Water Polo Victoria
+    url: http://websites.sportstg.com/assoc_page.cgi?c=1-3142-0-100117-0
+    image: /img/clients/water-polo-victoria.png
+
+  - name: Western Region Football League
+    url: http://websites.sportstg.com/assoc_page.cgi?c=1-25-0-0-0&assoc=25&amp%3bsID=326935
+    image: /img/clients/western-region-football-league.png
+
+  - name: Yarra Junior Football League
+    url: http://www.yarrajfl.org.au/
+    image: /img/clients/yarra-junior-football-league.jpg
+
+  - name: Life Education Group
+    url: https://www.lifeeducation.org.au/
+    image: /img/clients/life-education-group.jpg
+
+page:
+  # List the client names (as defined in the above section) that should appear in the logo box
+  # On these pages
+  index:
+    - Cricket Australia
+    - AON
+    - Australian Childhood Foundation
+    - Netball America
+  sports:
+    - Netball America
+    - Cricket Australia
+    - Gymnastics Victoria
+    - Squash and Racquetball Victoria
+    - Water Polo Victoria
+    - Diamond Creek Netball
+    - Pure Allstars
+    - Eastern Football League
+    - Northern Football League
+    - Western Region Football League
+    - Yarra Junior Football League
+    - South Metro Junior Footbal League
+  camps:
+    - Australian Camps Association
+    - Briars Camps
+    - Doxa
+    - Licola
+    - Edmund Rice Camps

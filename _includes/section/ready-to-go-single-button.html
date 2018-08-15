@@ -1,0 +1,18 @@
+<section id="call-to-action">
+  <h2>Ready to go?</h2>
+  <div class="row get-started">
+    <div class="col-xs-12 text-center">
+      {% if include.type == "individuals" %}
+        <a href="https://app.Everproof.com/Account/Register">
+          <button class="button">Create A Free Account</button>
+        </a>
+        <p>
+          Join thousands of other users! Get set up in minutes.
+        </p>
+      {% endif %}
+      <a href="/contact?r={{ page.url | uri_escape }}">
+        <button class="button">Contact Us</button>
+      </a>
+    </div>
+  </div>
+</section>

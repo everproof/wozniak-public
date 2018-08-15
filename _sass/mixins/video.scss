@@ -1,0 +1,19 @@
+@mixin video-play-button($size) {
+  $hover-size: floor($size * 1.1);
+
+  position: absolute;
+  cursor: pointer;
+  transition: margin 0.2s linear, width 0.2s linear, height 0.2s linear;
+  max-width: 50%;
+  width: $size;
+  height: $size;
+  margin-left: - $size / 2;
+  margin-top: - $size / 2;
+
+  &:hover {
+    width: $hover-size;
+    height: $hover-size;
+    margin-left: - $hover-size / 2;
+    margin-top: - $hover-size / 2;
+  }
+}

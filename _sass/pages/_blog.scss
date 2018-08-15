@@ -1,0 +1,123 @@
+@import "../variables";
+
+#blog-posts {
+  background: #fafafa;
+  padding-top: 100px;
+
+  .posts {
+    margin-right: auto !important;
+    margin-left: auto !important;
+
+    @extend .row;
+
+    .post {
+      height: 320px;
+      padding-bottom: 20px;
+
+      .image-wrapper {
+        height: 101px;
+        overflow: hidden;
+      }
+
+      .blog-title {
+        text-align: left;
+        color: #555;
+        font-size: 20px;
+        text-transform: none;
+      }
+
+      @extend .col-xs-6, .col-sm-6, .col-md-4;
+    }
+
+    @media (max-width: 991px) {
+      .post {
+        .image-wrapper {
+          height: 129px;
+        }
+      }
+    }
+
+    @media (max-width: 780px) {
+      max-width: 600px !important;
+      margin: 0 auto;
+
+      .post {
+        height: 300px;
+
+        .image-wrapper {
+          height: 101px;
+        }
+      }
+    }
+
+    @media (max-width: 610px) {
+      max-width: 400px !important;
+
+      .post {
+        width: 100%;
+
+        .image-wrapper {
+          height: 139px;
+        }
+      }
+    }
+
+    @media (max-width: 400px) {
+      .post {
+        height: auto;
+
+        .image-wrapper {
+          height: auto;
+          max-height: 120px;
+        }
+      }
+    }
+  }
+
+  .pagination {
+    display: block;
+    text-align: center;
+
+    .page-number {
+      padding: 0 10px;
+    }
+
+    $chevron-size: 5px;
+    $chevron-padding: 5px;
+    $chevron-offset: -($chevron-size * 2 + $chevron-padding);
+    %chevron {
+      content: " ";
+      position: absolute;
+      border: 5px solid transparent;
+      top: 50%;
+      margin-top: -5px;
+    }
+
+    .next, .previous {
+      position: relative;
+    }
+
+    .next:after {
+      @extend %chevron;
+
+      border-left-color: $blue;
+      right: $chevron-offset;
+    }
+
+    .previous:before {
+      @extend %chevron;
+
+      border-right-color: $blue;
+      left: $chevron-offset;
+    }
+
+    span {
+      &.previous, &.next {
+        &:before, &:after {
+          content: "";
+          border: none;
+        }
+      }
+    }
+  }
+}

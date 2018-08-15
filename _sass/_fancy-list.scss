@@ -1,0 +1,48 @@
+
+.fancy-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  .fancy-list-item {
+    margin: 40px 0;
+
+    .image {
+      float: left;
+      position: relative;
+      top: 15px;
+
+      img {
+        width: 40px;
+        height: 40px;
+      }
+
+      &.less-top {
+        top: 0px;
+      }
+
+      &.double-line {
+        top: 17px;
+      }
+
+    }
+
+    .title, .desc {
+      text-align: left;
+      padding-left: 65px;
+    }
+
+    .title {
+      font-size: 16px;
+      padding-bottom: 3px;
+      font-weight: 500;
+      color: $gray-darker;
+    }
+
+    .desc {
+      color: #524e4e;
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+}

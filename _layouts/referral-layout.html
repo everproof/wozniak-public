@@ -1,0 +1,20 @@
+---
+layout: layout
+---
+{% assign values = "qualifications|accreditations|WWCCs|certificates|licences|training records" %}
+<div id="main-header" style="background-image: url('/img/banners/index2.jpg');">
+  <div id="header">
+    <div id="header-title">
+      <h1 class="main-title">
+        A single platform for digitising <br class="text-change-br"><span data-text-change="{{ values }}"></span>
+      </h1>
+      <h1 class="subheading">Store qualifications for employees and volunteers online.</h1>
+      <h1 class="subheading">Eliminate spreadsheets, photocopies and manual tasks.</h1>
+      <div class="buttons">
+        <a id="watch-video" href="#" class="button primary" data-video-id="Tep4IRoQSSA">Watch the video</a>
+        <a href="/demo?r={{ page.url | uri_escape }}" class="button">Request A Demo</a>
+      </div>
+    </div>
+  </div>
+</div>
+{{ content }}

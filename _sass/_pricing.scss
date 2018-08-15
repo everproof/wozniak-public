@@ -1,0 +1,208 @@
+@import "bootstrap/variables";
+@import "variables";
+@import "mixins/box";
+@import "mixins/utils";
+
+#pricing {
+  .packages {
+    @extend .row;
+    margin: 0 auto !important;
+  }
+
+  .price-details {
+    font-size: 18px;
+    margin-top: 30px;
+  }
+
+  &.pricing {
+    .package {
+      @extend .col-sm-4;
+    }
+  }
+
+  &.sports {
+    > .packages {
+      max-width: 800px;
+    }
+
+    .package {
+      @extend .col-sm-12;
+    }
+  }
+
+  .package {
+    // To align the 'most-popular' header with the other packages
+    // Margin-top = height of most popular - current inner:before height
+    margin-top: 50px - 6px;
+
+    .inner {
+      border: 1px solid $gray-lighter;
+      background: white;
+      @include set-multiple(margin-left margin-right, auto);
+      max-width: 350px;
+
+      &:before {
+        content: " ";
+        height: 6px;
+        width: 100%;
+        display: block;
+      }
+
+      &:hover {
+        box-shadow: -1px 3px 6px 0 #b3b2b2;
+      }
+    }
+
+    .header {
+      height: auto;
+      text-align: center;
+      border-bottom: 1px solid $gray-lighter;
+      padding-bottom: 20px;
+
+      .title {
+        font-weight: 400;
+        font-size: 30px;
+        text-transform: uppercase;
+        margin-bottom: 0;
+        padding-top: 15px;
+      }
+
+      .sub-title {
+        margin-bottom: 5px;
+
+        &.first {
+          margin-top: 15px;
+        }
+      }
+
+      .contact-info {
+        // So that it's the same height as the pricing section
+        padding: 9px 0;
+        font-size: 16px;
+      }
+
+      .price-wrapper {
+        font-size: 16px;
+        padding: 10px 0;
+
+        .price {
+          font-size: 30px;
+          font-weight: 300;
+
+          &:before, .period {
+            font-weight: normal;
+            text-transform: none;
+          }
+
+          &:before {
+            content: '$';
+            font-size: 20px;
+            position: relative;
+            top: -10px;
+            left: 0;
+          }
+        }
+
+        .period {
+          content: '/mo*';
+          position: relative;
+          bottom: 0;
+        }
+      }
+    }
+
+    .content {
+      .features {
+        @include no-list-styles();
+        margin: 0;
+        padding: 0;
+
+        li {
+          font-size: 16px;
+          padding: 12px 15px 12px 40px;
+          position: relative;
+
+          &.not-available {
+            color: #cacaca;
+          }
+
+          img {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+          }
+        }
+      }
+    }
+
+    .footer {
+      padding: 20px 0;
+
+      .button {
+
+        margin: 0 auto;
+
+        &:hover {
+          -webkit-box-shadow: none;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .button {
+          width: 160px;
+        }
+      }
+    }
+
+    &.most-popular {
+      margin-top: 10px;
+
+      .inner {
+        &:before {
+          display: block;
+          content: "Most Popular";
+          text-transform: uppercase;
+          color: white;
+          height: 40px;
+          font-weight: 500;
+          font-size: 16px;
+          text-align: center;
+          // To get the text aligned vertically centered
+          padding-top: 12px;
+        }
+      }
+    }
+
+    @media (max-width: $screen-xs-max) {
+      &, &.most-popular {
+        margin-top: 50px;
+      }
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    // Create the alternating colors for the packages
+    $pricing-color-list: $green $red $blue;
+    @for $i from 1 through length($pricing-color-list) {
+      $color: nth($pricing-color-list, $i);
+
+      &:nth-child(#{$i}) {
+        .inner:before {
+          background: $color;
+        }
+
+        .header {
+          .title, .price-wrapper {
+            color: $color;
+          }
+        }
+      }
+    }
+  }
+
+  h5 {
+    margin-top: 30px;
+  }
+}

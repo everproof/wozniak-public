@@ -1,0 +1,63 @@
+@mixin box($bg-color, $margin-top: 0px) {
+  $darker-bg-color: darken($bg-color, 10%);
+  height: 100%;
+
+  .title {
+    color: $bg-color;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: $margin-top 0 10px 0;
+    letter-spacing: 1px;
+  }
+
+  h3 {
+    color: $bg-color
+  }
+
+  .btn-pricing {
+    background: $bg-color;
+    color: white;
+    border-bottom: 4px solid $darker-bg-color;
+  }
+
+  .content {
+    text-align: center;
+    padding: 30px 20px 40px;
+    min-height: 70px;
+    border-top: 10px solid $bg-color;
+    background: white;
+
+    .svg {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      height: 130px;
+      width: 100%;
+      max-width: 130px;
+    }
+
+    p {
+      text-transform: none;
+      color: $gray-light;
+      margin: 0;
+    }
+
+    .title{
+      @extend .title;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &:hover {
+    box-shadow: -1px 3px 6px 0 #b3b2b2;
+
+    .btn-pricing {
+      background: white;
+      color: $bg-color;
+      border-bottom: 4px solid white;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+<section class="expression-of-interest">
+  {% if include.message %}
+    <p class="message">{{ include.message }}</p>
+  {% endif %}
+  <form
+      class="contact highlight"
+      id="contact-form"
+      action="/api/contact"
+      method="post"
+      enctype="text/plain">
+    <p class="message"></p>
+    <input type="hidden" name="formName" value="Contact Form">
+    <input
+        id="name"
+        type="text"
+        placeholder="Name"
+        name="contact_name"
+        required />
+    <input
+        id="email"
+        type="text"
+        placeholder="Email"
+        name="contact_email"
+        required />
+    <input
+        id="phone"
+        type="tel"
+        placeholder="Phone"
+        name="contact_phone"
+        required />
+    <input
+        id="organisation"
+        type="text"
+        placeholder="Organisation"
+        name="contact_organisation"
+        required />
+    <textarea id="comments" placeholder="Comments (Optional)" name="contact_comments"></textarea>
+    <div class="text-center">
+      <button id="submit" class="button inline" type="submit">Send</button>
+    </div>
+  </form>
+</section>

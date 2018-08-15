@@ -1,0 +1,27 @@
+@import "../variables";
+@import "../utils";
+@import "../bootstrap/mixins/gradients";
+
+#call-to-action {
+  background: #53ACE7;
+  @include gradient-horizontal($gradient-start, $gradient-end);
+
+  h1, h2, p {
+    color: white;
+  }
+
+  .get-started {
+    // This is a padding so that the spacing between the subheading
+    // and the buttons doesn't 'overlap' and cancel out
+    padding-top: 40px;
+
+    p {
+      max-width: 300px;
+      margin: 20px auto;
+    }
+  }
+
+  .button {
+    display: inline-block;
+  }
+}

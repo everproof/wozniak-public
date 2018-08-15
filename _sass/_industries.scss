@@ -1,0 +1,78 @@
+@import "mixins/flexbox";
+@import "variables";
+@import "mixins/box";
+
+.boxes {
+  @extend .row;
+
+  .box-wrapper {
+    padding: 0 10px;
+    margin-bottom: 15px;
+    width: 20%;
+    float: left;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (max-width: 950px) {
+    // TODO: Remove important by refactoring how sections are aligned and given max width
+    max-width: 700px !important;
+
+    .box-wrapper {
+      width: 50%;
+
+      // Some manual aligning of the last sector box
+      &.last {
+        margin-left: 25%;
+      }
+    }
+  }
+
+  @media (max-width: 500px) {
+    // TODO: Remove important by refactoring how sections are aligned and given max width
+    max-width: 350px !important;
+
+    .box-wrapper {
+      display: block;
+      width: 100% !important;
+      margin-bottom: 30px;
+
+      &.last {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .box{
+    height: auto;
+    &.sports {
+      @include box($green);
+
+      .svg {
+        color: red;
+      }
+    }
+
+    &.childcare {
+      @include box($purple);
+    }
+
+    &.camps {
+      @include box($yellow);
+    }
+
+    &.education {
+      @include box($red);
+    }
+
+    &.insurance{
+      @include box($blue);
+    }
+
+    &.local-government{
+      @include box($yellow);
+    }
+  }
+}

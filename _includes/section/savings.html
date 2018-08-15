@@ -1,0 +1,94 @@
+<section id="savings" class="{{ include.class }}">
+  <div class="employees-wrapper">
+    <div class="employees-text">
+      Number of Employees &amp; Volunteers:<span id="employees">100</span>
+    </div>
+    <p class="slider-info">
+      Drag the slider to the number of employees and volunteers in your organisation.
+    </p>
+  </div>
+  <input type="range"
+         min="10"
+         max="1000"
+         step="10"
+         value="100"
+         class="slider-input">
+  <div class="rangeslider rangeslider--horizontal">
+  </div>
+  <div class="row savings-wrapper">
+    <div class="col-sm-6">
+      <h3>Time and Money Cost</h3>
+      <p>
+        Managing qualifications and compliance is a significant administrative and
+        labour intensive task for organisations. This impacts those responsible for ensuring
+        organisation-wide compliance as well as individuals who must send evidence of their
+        qualifications.
+      </p>
+    </div>
+    <div class="col-sm-6">
+      <h3>Penalty Risk</h3>
+      <p>
+        Organisations can face significant financial penalties for engaging unqualified employees
+        and volunteers. For example, organisations that engage individuals without a valid Working
+        with Children Check can face fines of over:
+      </p>
+      <div class="cost-row row">
+        <div class="col-xs-6">Legal Cost</div>
+        <div class="col-xs-5">$180,000</div>
+      </div>
+    </div>
+    <div id="savings-cost" class="col-sm-12">
+      <h3>Everproof Can Save Per Year:</h3>
+      <div class="savings-list">
+        <div class="cost-row row">
+          <div class="col-xs-6">{{ include.details.time.name}}</div>
+          <div class="col-xs-5" id="hours-cost">0 hours</div>
+        </div>
+        <div class="cost-row row">
+          <div class="col-xs-6">{{ include.details.financial.name}}</div>
+          <div class="col-xs-5" id="financial-cost">$0</div>
+        </div>
+      </div>
+    </div>
+    <div class="savings-cta">
+      <a href="/demo/?r=/savings/" class="button primary">Request A Demo</a>
+    </div>
+  </div>
+  <script src="/js/polyfills/rangeslider.min.js"></script>
+  <script>
+    var timePerPerson = {{ include.details.time.per_person }}
+    var costPerHour = {{ include.details.financial.per_hour }}
+
+    var isMobile = false
+    var demoButton = $('.savings-cta')
+    var savingsList = $('#savings-cost')
+    var savingsWrapper = $('.savings-wrapper')
+
+    $(window).on('resize', function () {
+      if ($(window).width() >= 768 && isMobile) {
+        isMobile = false
+        savingsList.remove().insertBefore(demoButton)
+      } else if ($(window).width() < 768 && !isMobile) {
+        isMobile = true
+        savingsList.remove().prependTo(savingsWrapper)
+      }
+    }).resize()
+
+    $('.rangeslider').remove()
+
+    $('input[type="range"]').rangeslider({
+      polyfill: false,
+      handleClass: 'rangeslider__handle',
+      onSlide: function (pos, value) {
+        var time = parseInt(value * timePerPerson, 10)
+        var costInt = parseInt(costPerHour * time, 10)
+        $('#employees').text(parseInt(value, 10))
+        $('#hours-cost').text(time.toLocaleString() + ' hours')
+        $('#financial-cost').text('$' + costInt.toLocaleString())
+      },
+    })
+    $('input[type="range"]').val(100).change()
+
+
+  </script>
+</section>

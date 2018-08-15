@@ -1,0 +1,117 @@
+---
+layout: layout
+navigation: false
+title: Referral Program
+description: Managing qualifications and compliance can be time consuming and painful, but Everproof has a solution for organisations and individuals. Get started today!
+---
+<section id="refer">
+  <div class="row cta-wrapper">
+    <div class="col-md-12 text-center">
+      <a href="/">
+        <img id="logo" src="/img/logo.png" width="120">
+      </a>
+    </div>
+    <div class="col-md-9">
+      <div class="cta">Earn a <span class="highlight"><a href="http://www.giftcards.com.au/" target="_blank">$50 Coles-Myer giftcard</a></span> courtesy of Everproof.</div>
+    </div>
+    <div class="col-md-3 visible-md visible-lg">
+      <img width="100px" id="arrow" src="/img/arrow-curved.png">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-7">
+      <div class="sub-cta">Everproof is an online platform for storing qualifications, accreditations and other important documents for employees and volunteers. </div>
+      {% fancylist %}
+
+      {% fancylistitem one.svg "&nbsp;" %}
+        Fill in the contact form on the right.
+      {% endfancylistitem %}
+
+      {% fancylistitem two.svg "&nbsp;" %}
+        A Everproof consultant will give you a demonstration of the system.
+      {% endfancylistitem %}
+
+      {% fancylistitem three.svg "&nbsp;" %}
+        Your organisation signs up and you’ll earn a $50 Gift Card.
+      {% endfancylistitem %}
+
+      {% endfancylist %}
+    </div>
+    <div class="col-md-4 col-md-offset-1">
+      <div class="sub-cta">Fill this form out and we'll be in touch to see if Everproof is a good fit for your organisation.</div>
+      <form
+        class="contact"
+        id="contact-form"
+        action="/api/contact"
+        method="post"
+        enctype="text/plain">
+        <p class="message hidden"></p>
+        <input type="hidden" name="formName" value="Referral Form">
+        <input
+          id="name"
+          type="text"
+          placeholder="Name"
+          name="contact_name"
+          required />
+        <input
+          id="email"
+          type="text"
+          placeholder="Email"
+          name="contact_email"
+          required />
+        <input
+          id="phone"
+          type="tel"
+          placeholder="Phone"
+          name="contact_phone"
+          required />
+        <input
+          id="organisation"
+          type="text"
+          placeholder="Organisation"
+          name="contact_organisation"
+          required />
+        <input
+          id="referrer"
+          type="hidden"
+          name="contact_referrer" />
+        <button id="submit" class="button inline primary" type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="refer-details">
+  <div class="row">
+    <div class="col-md-12 text-center clearfix">
+      <div class="sub-cta">Everproof is used by all sorts of organisations large and small! Sporting clubs, childcare centres, schools, local government and camps are all using Everproof to reduce administrative work and increase compliance.</div>
+    </div>
+    <div class="col-md-6">
+      {% fancylist %}
+
+      {% fancylistitem chart-bars.svg "Eliminate spreadsheets" %}
+      Store qualifications for employees and volunteers online, eliminating manual tasks.
+      {% endfancylistitem %}
+
+      {% fancylistitem checkmark-circle.svg "Automated Verification" %}
+      Everproof provides automated and instant verification of Working With Children Checks.
+      {% endfancylistitem %}
+
+      {% endfancylist %}
+    </div>
+    <div class="col-md-6">
+      {% fancylist %}
+
+      {% fancylistitem clock.svg "Automated Alerts" %}
+      Receive notifications when a qualification or accreditation expires or becomes invalid.
+      {% endfancylistitem %}
+
+      {% fancylistitem user.svg "Personal Accounts" %}
+      Each person gets their own account to proactively manage their qualifications and accreditations.
+      {% endfancylistitem %}
+
+      {% endfancylist %}
+    </div>
+  </div>
+</section>
+{% include section/client-logos.html clients=site.data.client_logos.page.index %}

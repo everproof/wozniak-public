@@ -1,0 +1,17 @@
+@mixin no-list-styles() {
+  ul, li {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+}
+
+// Set multiple properties to the same value
+@mixin set-multiple($properties, $value) {
+  @each $property in $properties {
+    #{$property}: $value;
+  }
+}

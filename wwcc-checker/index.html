@@ -1,0 +1,41 @@
+---
+layout: banner-layout
+title: WWCC Checker
+banner-title: WWCC Checker
+banner-description: Mass Verification for Working With Children Checks.
+show-button: false
+capture-details-form: modal/wwcc-checker-capture.html
+---
+
+<section id="wwcc-verification">
+  <p>
+    Quickly check whether your employees and volunteers hold valid Working with Children Checks. Simply select the
+    state for the Working with Children Checks you want to verify, then enter the details of up for 5 people.
+  </p>
+
+  <form id="verification">
+    <ul class="providers"></ul>
+
+    <div class="fields-wrapper">
+      <div class="result-types">
+        <span class="verified" title="We were able to verify the qualification with the verification provider">
+          Verified
+        </span>
+        <span class="warning" title="There was an issue verifying the qualification with the verification provider">
+          Warning
+        </span>
+        <span class="invalid" title="The qualification is either invalid or expired">
+          Invalid
+        </span>
+      </div>
+
+      <div class="fields"></div>
+
+      <div class="hidden time-saved">
+        By using this service, you have just saved <span id="time-saved-value"></span> minutes of your time.
+      </div>
+    </div>
+
+    <button type="submit" class="button secondary">Check Status</button>
+  </form>
+</section>

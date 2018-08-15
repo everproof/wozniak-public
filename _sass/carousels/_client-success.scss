@@ -1,0 +1,136 @@
+@import "../variables";
+@import "../bootstrap/mixins/clearfix";
+
+#success {
+  $image-size: 200px;
+
+  .subheading {
+    display: none;
+  }
+
+
+  .client-success-carousel {
+    @include no-list-styles();
+  }
+
+  .story-wrapper {
+    box-sizing: border-box;
+    padding: 0 15px;
+  }
+
+  .story {
+    @include clearfix();
+    max-width: 800px;
+    margin: 0 auto;
+
+    img {
+      margin: 20px auto;
+      display: block;
+      width: $image-size;
+      height: auto;
+      box-sizing: content-box;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    .quote {
+      &:before, &:after {
+        font-family: "Times New Roman", Times, serif;
+      }
+
+      &:before {
+        content: "\"";
+      }
+
+      &:after {
+        content: "\"";
+      }
+    }
+
+    .quote-source {
+      .name, .organisation {
+        font-weight: bold;
+        font-style: italic;
+      }
+
+      .name:before {
+        content: "- ";
+      }
+    }
+  }
+
+  @media (min-width: 650px) {
+    .subheading {
+      display: block;
+    }
+
+    .story {
+      img {
+        margin: 0 auto;
+        float: left;
+      }
+
+      .quote-wrapper {
+        margin-left: $image-size + 50px;
+      }
+    }
+  }
+
+  $unslider-color: #bdbdbd;
+  $unslider-active-color: $primary-color;
+
+  .unslider-nav {
+    ol {
+      padding-top: 30px;
+
+      li {
+        width: 9px;
+        height: 9px;
+        border: 2px solid $unslider-color;
+        background: $unslider-color;
+
+        &.unslider-active {
+          border-color: $unslider-active-color;
+          background: $unslider-active-color
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 550px) {
+  #carousel-selectors {
+    .selector {
+      .small {
+        display: none;
+      }
+      .large {
+        display: block;
+      }
+    }
+  }
+}
+
+@media (max-width: 551px) {
+  #carousel-selectors {
+    .selector {
+      .small {
+        display: block;
+      }
+      .large {
+        display: none;
+      }
+    }
+  }
+}
+
+// Aware this looks weird, but it is actually required
+#carousel-selectors {
+  .selector {
+    .small, .large {
+      font-weight: 600;
+    }
+  }
+}

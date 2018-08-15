@@ -1,0 +1,63 @@
+<section id="pricing" class="{{ include.class }}">
+  <div class="packages">
+    {% assign are_links = include.details.packages | map: "link" | join: "" %}
+    {% for package in include.details.packages %}
+      <div class="package {% if package.most_popular %}most-popular{% endif %}">
+        <div class="inner">
+          <div class="header">
+            <p class="title">{{ package.name }}</p>
+
+            {% if package.price %}
+              <div class="price-wrapper">
+                {% if package.from %}
+                  <span class="from">From</span>
+                {% endif %}
+                <span class="price">{{ package.price }}</span>
+                <span class="period">/{{ include.details.billing_period }}</span>
+              </div>
+            {% else %}
+              <div class="contact-info">
+                <div><a href="/contact?r={{ page.url | uri_escape }}">Contact Us</a></div>
+                <div><a href="mailto:{{ "hello@Everproof.com" | encode_email }}">hello@Everproof.com</a></div>
+              </div>
+            {% endif %}
+
+            {% if package.num_users %}
+              <p class="sub-title">{{ package.num_users }}</p>
+            {% endif %}
+          </div>
+          <div class="content">
+            <ul class="features">
+              {% for feature in site.data.pricing.features %}
+                {% if feature.applies_to contains package.id %}
+                  <li>
+                    {% if feature.warning %}
+                      <img src="/img/icons/checkmark-circle-warning.svg" />
+                    {% else %}
+                      <img src="/img/icons/checkmark-circle.svg" />
+                    {% endif %}
+                    {{ feature.name }}
+                  </li>
+                {% else %}
+                  {% unless feature.unique %}
+                  <li class="not-available">
+                    <img src="/img/icons/checkmark-circle-disabled.svg" />
+                    {{ feature.name }}
+                  </li>
+                  {% endunless %}
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+          {% unless page.pricing-button == false %}
+          <div class="footer">
+            <a href="/demo?r={{ page.url | uri_escape }}" class="button primary">Request A Demo</a>
+          </div>
+          {% endunless %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <p class="price-details text-center">{{ include.details.billing_info }}</p>
+</section>

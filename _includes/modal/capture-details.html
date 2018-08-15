@@ -1,0 +1,54 @@
+<div class="modal fade" id="capture-details-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog capture-details" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <p class="modal-title">Watch Video</p>
+      </div>
+      <div class="modal-body">
+        <h4 class="subheading text-center">See how Everproof works!</h4>
+        <form
+          class="contact highlight"
+          id="capture-form"
+          action="/api/contact"
+          method="post"
+          enctype="text/plain">
+          <p class="message hidden"></p>
+          <input type="hidden" name="formName" value="Video Capture ({{ page.url }})">
+          <input
+            id="name"
+            type="text"
+            placeholder="Name"
+            name="contact_name"
+            required />
+          <input
+            id="email"
+            type="text"
+            placeholder="Email"
+            name="contact_email"
+            required />
+          <input
+            id="phone"
+            type="tel"
+            placeholder="Phone"
+            name="contact_phone"
+            required />
+          <input
+            id="organisation"
+            type="text"
+            placeholder="Organisation"
+            name="contact_organisation"
+            required />
+          <textarea id="comments" placeholder="Comments (Optional)" name="contact_comments"></textarea>
+          <div class="g-recaptcha"
+               data-sitekey="{{site.data.global.recaptcha.capture_details_form.site_key}}"></div>
+          <div class="buttons">
+            <button id="submit" class="button primary" type="submit">Watch</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

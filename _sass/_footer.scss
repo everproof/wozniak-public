@@ -1,0 +1,31 @@
+@import "mixins/_utils";
+
+footer {
+  padding-top: 40px;
+  background: #003555;
+  padding-bottom: 5%;
+
+  a {
+    color: white;
+  }
+
+  p {
+    color: white;
+    margin-top: 20px;
+  }
+
+  ul {
+    @include no-list-styles();
+
+    li {
+      margin: 15px 0;
+
+      &:first-child {
+        color: white;
+        letter-spacing: 1px;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "clasity/Everproofbrochuresite",
+  "description": "The Brochure Site for the Everproof App",
+  "authors": [
+    {
+      "name": "Everproof",
+      "email": "info@Everproof.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "phpmailer/phpmailer": "~5.2",
+    "rollbar/rollbar": "0.6.3",
+    "guzzlehttp/guzzle": "~6.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src"
+    }
+  }
+}

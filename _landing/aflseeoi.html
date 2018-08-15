@@ -1,0 +1,46 @@
+---
+layout: banner-layout
+title: AFLSE Contact
+banner-image: /img/banners/football.png
+banner-title: AFL SOUTH EAST&#58; EXPRESSION OF INTEREST FOR 2017 SEASON
+---
+
+<section>
+  <form
+    class="contact highlight"
+    id="contact-form"
+    action="/api/contact"
+    method="post"
+    enctype="text/plain">
+    <p class="message hidden"></p>
+    <input type="hidden" name="formName" value="Contact Form">
+    <input
+      id="name"
+      type="text"
+      placeholder="Name"
+      name="contact_name"
+      required />
+    <input
+      id="club"
+      type="text"
+      placeholder="Club"
+      name="contact_club"
+      required />
+    <input
+      id="phone"
+      type="tel"
+      placeholder="Phone"
+      name="contact_phone"
+      required />
+    <input
+      id="teams"
+      type="text"
+      placeholder="Approx. Number of Teams"
+      name="contact_teams"
+      required />
+    <textarea id="message" placeholder="Message (Optional)" name="contact_message"></textarea>
+    <div class="text-center">
+      <button id="submit" class="button inline" type="submit">Send</button>
+    </div>
+  </form>
+</section>

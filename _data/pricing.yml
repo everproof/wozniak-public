@@ -1,0 +1,63 @@
+features:
+  - name: "Unlimited qualifications per user"
+    applies_to: ["Org::Lite", "Org::Pro", "Org::Plus", "Sports::Pro", "Gymnastics::Pro"]
+    unique: True
+
+  - name: "Automatic verification"
+    applies_to: ["Org::Lite", "Org::Pro", "Org::Plus", "Sports::Lite", "Sports::Pro", "Gymnastics::Pro"]
+
+  - name: "Compliance dashboard"
+    applies_to: ["Org::Lite", "Org::Pro", "Org::Plus", "Sports::Lite", "Sports::Pro", "Gymnastics::Pro"]
+
+  - name: "Customisable role requirements"
+    applies_to: ["Org::Lite", "Org::Pro", "Org::Plus", "Sports::Lite", "Sports::Pro", "Gymnastics::Pro"]
+
+  - name: "Expiry reminders"
+    applies_to: ["Org::Lite", "Org::Pro", "Org::Plus", "Sports::Pro", "Gymnastics::Pro"]
+
+  - name: "Historic archive"
+    applies_to: ["Org::Lite", "Org::Pro", "Org::Plus", "Sports::Pro", "Gymnastics::Pro"]
+
+  - name: "Compliance issues list"
+    applies_to: ["Org::Lite", "Org::Pro", "Org::Plus", "Sports::Pro", "Gymnastics::Pro"]
+
+  - name: "Concierge on-boarding"
+    applies_to: ["Org::Plus", "Sports::Pro", "Gymnastics::Pro"]
+
+
+sports:
+  billing_period: "team" # Billed Per Team
+  billing_info: "Per Team, Per Year. Billed Annually. Price shown does not include GST."
+  packages:
+    - name: "Pro"
+      id: "Sports::Pro"
+      alt_name: "Plus" # So this package can be named Pro, but have the features of Plus
+      price: "20"
+
+
+organisation:
+  billing_period: "mo" # Per Month
+  billing_info: "Per User, Per Month. Billed Annually. Price shown does not include GST."
+  packages:
+    - name: "Volunteer"
+      id: "Org::Lite"
+      price: "1"
+      num_users: "1 - 200 Users"
+
+    - name: "Staff"
+      id: "Org::Pro"
+      price: "3"
+      num_users: "1 - 200 Users"
+
+    - name: "Plus"
+      id: "Org::Plus"
+      num_users: "200+ Users"
+      
+gymnastics:
+  billing_period: "user" # Billed Per Team
+  billing_info: "Per Year. Billed Annually. Price shown does not include GST."
+  packages:
+    - name: "Pro"
+      id: "Gymnastics::Pro"
+      alt_name: "Plus" # So this package can be named Pro, but have the features of Plus
+      price: "5"

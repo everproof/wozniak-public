@@ -1,0 +1,151 @@
+@import "../mixins/utils";
+
+.banner-image {
+  text-align: center;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+$gutter-width: 105px;
+
+.blog-post {
+  padding-top: 100px;
+
+  > div {
+    position: relative;
+    padding-left: $gutter-width;
+    padding-right: $gutter-width;
+  }
+
+  @media (max-width: 767px) {
+    padding-top: 50px;
+    > div {
+      position: relative;
+      padding: 0px;
+    }
+  }
+
+  .title {
+    text-align: left;
+    color: #000;
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 120%;
+
+    margin-top: 30px;
+    margin-bottom: 0;
+  }
+
+  .author {
+    margin-top: 30px;
+
+    .avatar {
+      vertical-align: middle;
+      width: 80px;
+      height: 80px;
+      border-radius: 100%;
+      display: inline-block;
+    }
+
+    .details {
+      vertical-align: middle;
+      color: rgba(0,0,0,.54);
+      font-size: 26px;
+      line-height: 30px;
+      display: inline-block;
+      margin-left: 16px;
+
+      .date {
+        font-size: 20px;
+        display: block;
+      }
+    }
+  }
+
+  .blog-content {
+    h1, h2, h3, h4, h5, h6 {
+      text-align: left;
+      color: rgba(0,0,0,.84);
+      text-transform: none;
+      margin-top: 50px;
+      line-height: 140%;
+    }
+
+    h1 { font-size: 42px; }
+    h2 { font-size: 38px; }
+    h3 { font-size: 34px; }
+    h4 { font-size: 28px; }
+
+    p, strong, ul, ol {
+      font-family: Georgia,Cambria,"Times New Roman",Times,serif;
+      font-size: 21px;
+      line-height: 1.58;
+      color: rgba(0,0,0,.84);
+      margin-top: 30px;
+    }
+
+    blockquote  {    
+      > p {
+        font-style: italic;
+        margin: 0px;
+      }
+    }
+
+    .client-success-info {
+      float: left;
+
+      @media (max-width: 700px) {
+        float: none;
+        text-align: center;
+      }
+    }
+
+    
+
+    img {
+      max-width: 300px;
+      height: auto;
+      padding: 20px 20px 20px 0;
+
+      @media (max-width: 500px) {
+        padding: 20px;
+        width: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      &.img-center {
+        max-width: 100%;
+        display: block;
+        padding: 20px 0;
+        margin: 0 auto;
+      }
+    }
+
+    .img-helper-text {
+      font-size: 10pt;
+      text-align: center;
+      display: block;
+    }
+
+    .article-actions {
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 10px
+    }
+
+    :first-child {
+      img {
+        padding-top: 0;
+      }
+    }
+  }
+
+  .any-2-any-wrapper {
+    margin-top: 40px;
+  }
+}

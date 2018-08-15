@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="78px" height="97px" viewBox="0 0 78 97" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>government</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="government" stroke="#FBC053" stroke-width="2">
+            <path d="M0.5,95.0644531 L77.5,95.0644531" id="Path-20"></path>
+            <path d="M20,54 L20,96.1987006" id="Path-21"></path>
+            <path d="M1,54 L1,96.1987006" id="Path-21-Copy-3"></path>
+            <path d="M77,54 L77,96.1987006" id="Path-21-Copy-4"></path>
+            <path d="M39,54 L39,96.1987006" id="Path-21-Copy"></path>
+            <path d="M58,54 L58,96.1987006" id="Path-21-Copy-2"></path>
+            <path d="M7,53.7776307 C10.3107103,34.0015394 20.6339371,24.0027396 37.9696804,23.7812313 C55.3054236,23.5597231 66.3155302,33.5585228 71,53.7776307" id="Path-22"></path>
+            <path d="M77.5,53 L0.5,53" id="Path-23"></path>
+            <path d="M39,24.1401367 L39,0.708466708" id="Path-24"></path>
+            <polyline id="Path-25" points="39.0541992 1.16870117 57.6069336 4.29541016 57.6069336 16.4819336 39.4697266 13.9731445"></polyline>
+        </g>
+    </g>
+</svg>

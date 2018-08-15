@@ -1,0 +1,26 @@
+@import "../variables";
+
+#about-us {
+  background: #ffffff;
+
+  h1, h2 {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 18px;
+    color: $blue;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    color: #444444;
+    font-size: 30px;
+    line-height: 30px;
+    text-transform: none;
+  }
+
+  strong {
+    font-weight: 400;
+  }
+}

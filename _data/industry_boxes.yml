@@ -1,0 +1,29 @@
+- title: Sports
+  desc: Helping volunteers in grassroots sport spend less time on paperwork and admin
+  image: /img/sectors/sports.svg
+  class: sports
+  link: /sports/
+
+- title: Childcare
+  desc: Digitising and monitoring WWCCs, anaphylaxis, first aid and even immunisation records
+  image: /img/sectors/childcare.svg
+  class: childcare
+  link: /childcare/
+
+- title: Schools
+  desc: Tracking WWCCs for staff, contractors, parents and other volunteers
+  image: /img/sectors/education.svg
+  class: education
+  link: /schools/
+
+- title: Local Government
+  desc: "Working with all branches of local government, including: recreation centres, healthcare and childcare"
+  image: /img/sectors/government.svg
+  class: local-government
+  link: /local-government/
+  
+- title: Insurance
+  desc: Monitoring all license expiry dates and statuses for endorsed agents
+  image: /img/sectors/insurance.svg
+  class: insurance
+  link: /insurance/

@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>{{ page.title }} | Everproof</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{ page.description }}" />
+  <meta name="author" content="Everproof" />
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400" rel="stylesheet" />
+  <link href="/css/unslider.css" rel="stylesheet" />
+  <link href="{{ '/css/main.css' | asset_url }}" rel="stylesheet" />
+
+  {% include meta/icons.html %}
+
+  <script src="/js/jquery.min.js"></script>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+  {% include meta/rollbar.html %}
+  {% include meta/google-analytics.html %}
+  
+</head>
+<body>
+  {% assign button_link = "/demo?r=" | append: page.url %}
+  {% if page.nav_button_link %}
+    {% assign button_link = page.nav_button_link %}
+  {% endif %}
+
+  {% assign button_label = "Request A Demo" %}
+  {% if page.nav_button_label %}
+    {% assign button_label = page.nav_button_label %}
+  {% endif %}
+
+  {% if page.navigation == true %}
+    {% include navbar.html button_link=button_link button_label=button_label %}
+  {% endif %}
+
+  <div class="container">
+    {{ content }}
+    {% include footer.html %}
+  </div>
+
+  {% if page.capture-details-form %}
+    {% include {{ page.capture-details-form }} %}
+  {% else %}
+    {% include modal/capture-details.html %}
+  {% endif %}
+
+  {% include modal/video.html %}
+
+  <script src="/js/polyfills/respond.min.js"></script>
+  <script src="/js/polyfills/selectivizr.min.js"></script>
+  <script src="/js/polyfills/promise.min.js"></script>
+  <script src="/js/polyfills/array.js"></script>
+  <script src="/js/polyfills/object.js"></script>
+  
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/typed.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/jquery.matchHeight-min.js"></script>
+  {% js main %}
+</body>
+</html>

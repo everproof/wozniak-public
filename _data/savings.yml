@@ -1,0 +1,6 @@
+time:
+  name: "Time"
+  per_person: 1.02
+financial:
+  name: "Financial"
+  per_hour: 20.1

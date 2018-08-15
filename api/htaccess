@@ -1,0 +1,10 @@
+---
+layout: null
+permalink: api/.htaccess
+---
+
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteRule    ^$    endpoints/    [L]
+    RewriteRule    (.*) endpoints/$1    [L]
+</IfModule>

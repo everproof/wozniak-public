@@ -1,0 +1,45 @@
+
+#reinventure-promo {
+    .reinventure-promo__post {
+        padding: 30px 0;
+        min-height: 150px;
+
+        &:first-child {
+            padding-top: 0;
+        }
+        
+        img {
+            width: 150px;
+            height: 150px;
+            float: left;
+            margin-left: 50px;
+        }
+
+        p {
+            padding-left: 270px;
+
+            &.post-title {
+                font-size: 14pt;
+                font-weight: 500;
+
+                a {
+                    color: #777;
+
+                    &:hover {
+                        color: #999;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 700px) {
+            img {
+                margin-left: 0;
+            }
+
+            p {
+                padding-left: 170px;
+            }
+        }
+    }
+}

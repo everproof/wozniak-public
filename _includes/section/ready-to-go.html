@@ -1,0 +1,30 @@
+<section id="call-to-action">
+  <h2>Ready to go?</h2>
+  <div class="row get-started">
+    <div class="col-sm-6 col-xs-12 text-center">
+      {% if include.type == "individuals" %}
+        <a href="https://app.Everproof.com/Account/Register">
+          <button class="button">Create A Free Account</button>
+        </a>
+        <p>
+          Join thousands of other users! Get set up in minutes.
+        </p>
+      {% else %}
+        <a href="/demo?r={{ page.url | uri_escape }}">
+          <button class="button">Request A Demo</button>
+        </a>
+        <p>
+          We'll walk you through how Everproof works to make sure we're a perfect fit.
+        </p>
+      {% endif %}
+    </div>
+    <div class="col-sm-6 col-xs-12 text-center xs-margin">
+      <a href="/contact?r={{ page.url | uri_escape }}">
+        <button class="button white">Contact Us</button>
+      </a>
+      <p>
+        We'd love to hear from you.
+      </p>
+    </div>
+  </div>
+</section>

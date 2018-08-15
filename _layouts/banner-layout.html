@@ -1,0 +1,36 @@
+---
+layout: layout
+---
+
+{% if page.banner-image %}
+  {% assign class = "" %}
+  {% capture attributes %}
+  style="background-image: url('{{ page.banner-image }}');"
+  {% endcapture %}
+{% else %}
+  {% assign class = "no-image" %}
+{% endif %}
+
+<div id="main-header" class="{{ class }}" {{ attributes }}>
+  <div id="header">
+    <div id="header-title">
+      <h1 class="main-title">{{ page.banner-title }}</h1>
+      <h1 class="subheading">{{ page.banner-description }}</h1>
+      {% if page.show-button %}
+        <div class="buttons">
+        {% if page.show-button == "contact" %}
+          <a href="/contact?r={{ page.url | uri_escape }}" class="button">Contact Us</a>
+        {% elsif page.show-button == "video" %}
+          <a id="watch-video" href="#" class="button primary" data-video-id="Tep4IRoQSSA">Watch the video</a>
+        {% elsif page.show-button == "demo" %}
+          <a href="/demo?r={{ page.url | uri_escape }}" class="button">Request A Demo</a>
+        {% else %}
+          <a id="watch-video" href="#" class="button primary" data-video-id="Tep4IRoQSSA">Watch the video</a>
+          <a href="/demo?r={{ page.url | uri_escape }}" class="button">Request A Demo</a>
+        {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{{ content }}

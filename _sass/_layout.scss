@@ -1,0 +1,97 @@
+@import "variables";
+@import "mixins/utils";
+
+* {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+body {
+  height: 100%;
+  background: #f2f2f2 !important;
+
+  &.no-scroll {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  > .container {
+    padding: 0;
+    margin-top: 150px; // Manually set based on the navbar height
+
+    :first-child {
+      &.section {
+        margin-top: 51px; // Manually set for the height of the navbar
+      }
+    }
+  }
+}
+
+%heading-font {
+  font-family: 'Roboto', sans-serif;
+}
+
+@mixin subheading($font-size, $subheading-font-size) {
+  $reduced-heading-font-size: floor($font-size * 0.9);
+  $reduced-subheading-font-size: floor($subheading-font-size * 0.9);
+
+  @extend %heading-font;
+  font-size: $font-size;
+  text-transform: uppercase;
+  color: $primary-color;
+
+  &.subheading {
+    font-size: $subheading-font-size;
+    text-transform: none;
+    color: $subheading-color;
+  }
+
+  @media (max-width: 640px) {
+    @include set-multiple(font-size line-height, $reduced-heading-font-size);
+
+    &.subheading {
+      @include set-multiple(font-size line-height, $reduced-subheading-font-size);
+    }
+  }
+}
+
+h1 {
+  @extend %heading-font;
+  font-size: 40px;
+  color: white;
+
+  .subheading {
+    font-size: 26px;
+  }
+}
+
+h2 {
+  @include subheading(24px, 18px);
+}
+
+h3 {
+  @include subheading(20px, 16px);
+}
+
+h4 {
+  @include subheading(16px, 16px);
+}
+
+h5 {
+  @include subheading(14px, 14px);
+}
+
+a {
+  &.important {
+    @extend .blue;
+
+    &:after {
+      content: " ";
+      border: 8px solid transparent;
+      border-left-color: $blue;
+      display: inline-block;
+      margin-bottom: -2px;
+      margin-left: 8px;
+    }
+  }
+}

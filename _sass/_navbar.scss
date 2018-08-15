@@ -1,0 +1,90 @@
+@import "variables";
+
+body.modal-open {
+  .navbar {
+    // I think bootstrap is adding a padding to the body, we need to manually add it
+    // to the navbar to ensure it still lines up
+    margin-right: 15px;
+  }
+}
+
+.navbar {
+  border: 0;
+  font-size: 18px;
+  background-color: transparent;
+}
+
+#navbar {
+  background: #ffffff;
+  border-bottom: 2px solid #e9e9e9;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  .navbar-header {
+    button {
+      border: none;
+    }
+  }
+
+  .hide-with-mobile-nav {
+    @media (min-width: $grid-float-breakpoint) {
+      display: none;
+    }
+  }
+
+  .navbar-btn {
+    // Manually adjusted until it looked right
+    margin-top: 9px;
+    margin-bottom: 9px;
+  }
+
+  .navbar-nav {
+    > li > a {
+      transition: color 1s;
+      line-height: 36px;
+
+      &:focus, &:hover {
+        background: rgba(231, 231, 231, 0.38) !important;
+      }
+    }
+
+    .dropdown-menu > li > a {
+      color: #636363;
+      font-size: 16px;
+    }
+  }
+
+  .dropdown-toggle {
+    svg {
+      width: 12px;
+      height: 12px;
+      margin: 2px 0 0 2px;
+
+      path {
+        fill: #777777;
+      }
+    }
+  }
+
+  .button {
+    display: inline-block;
+    width: auto;
+
+    &.naked {
+      text-transform: none;
+      padding: 8px 32px;
+      color: $primary-color;
+      border-color: $primary-color;
+
+      &.primary {
+        color: #fff;
+        background-color: $primary-color;
+      }
+    }
+  }
+}
+
+.navbar-right {
+  margin-right: 0;
+  padding-top: 8px;
+}

@@ -1,0 +1,8 @@
+# Site Settings
+title: 'Everpoof'
+description: 'Store, manage and verify your employee or volunteer qualifications, licences and credentials. From Working with Children Checks, to First Aid Certificates and other Personal Development.'
+url: 'https://everpoof.com' # the base hostname & protocol for your site
+
+# Admin Settings
+admin_name: 'Andreas Limberopoulos'
+admin_email: 'admin@Everproof.com'

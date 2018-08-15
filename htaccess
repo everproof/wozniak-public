@@ -1,0 +1,10 @@
+---
+layout: null
+permalink: .htaccess
+---
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+
+Redirect 301 /privacy/ /docs/legal/privacy-policy.pdf
+Redirect 301 /privacy /docs/legal/privacy-policy.pdf

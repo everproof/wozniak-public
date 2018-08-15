@@ -1,0 +1,149 @@
+@import "../variables";
+@import "../bootstrap/mixins/gradients";
+
+#main-header {
+  background-size: cover;
+  background-position: 50% 15%;
+  color: #F2F2F2;
+  text-align: center;
+  position: relative;
+  border-bottom: 1px solid rgba(203, 203, 203, 0.4);
+
+  &.empty {
+    height: $nav-bar-height;
+  }
+
+  &.no-image {
+    @include gradient-horizontal($gradient-start, $gradient-end);
+  }
+
+  &.about-us {
+    background-image: url('/img/banners/aboutus.jpg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    height: 700px;
+    margin-top: 63px;
+
+    @media (max-width: 950px) {
+      height: 300px;
+    }
+  }
+
+  [data-text-change] {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  br.text-change-br {
+    display: none;
+
+    @media (max-width: 950px) {
+      // Manually adjusted to what looks good
+      display: block;
+    }
+  }
+
+  button {
+    margin-top: 3%;
+  }
+
+  #header {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 900px;
+    padding: (120px + $nav-bar-height) 10px 120px;
+    box-sizing: content-box;
+
+    h5 {
+      max-width: 400px;
+      margin: 0 auto;
+      padding-top: 10px;
+    }
+
+    #header-title img {
+      margin-top: 30px;
+    }
+  }
+
+  &.small, &.no-image {
+    #header {
+      padding: (90px + $nav-bar-height) 10px 90px;
+    }
+  }
+
+  h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .main-title, .subheading {
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  .main-title {
+    font-size: 40px;
+  }
+
+  .subheading {
+    color: #ffffff;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 30px;
+    margin: 0 auto;
+  }
+
+  .buttons {
+    margin-top: 40px;
+
+    .button {
+      margin: 10px;
+      display: inline-block;
+
+      &#watch-video {
+        // Adjust the dimensions of the image as necessary
+        $height: 16px;
+        $width: 16px;
+
+        position: relative;
+        // Default button padding + whatever looks good
+        padding-right: 13px + 20px;
+
+        &:after {
+          position: absolute;
+          content: " ";
+          background: url(/img/icons/play-video.svg) center center no-repeat;
+          // Adjust dimensions as necessary
+          height: $height;
+          width: $width;
+          top: 50%;
+          margin-top: -1px - $height / 2;
+          right: 25px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    #header {
+      padding-top: 100px + $nav-bar-height;
+      padding-bottom: 100px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .main-title {
+      font-size: 30px;
+    }
+
+    .subheading {
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    #header {
+      padding-top: 80px + $nav-bar-height;
+      padding-bottom: 50px;
+    }
+  }
+}

@@ -1,0 +1,6 @@
+Hi,
+
+We've just had someone submit a contact form on the website. Their details (including
+which form they submitted) are listed below.
+
+{{message}}
